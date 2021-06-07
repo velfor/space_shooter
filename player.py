@@ -12,7 +12,7 @@ class Player(pygame.sprite.Sprite):
         # создаем прямоугольник - рамку для определения столкновений
         self.rect = self.image.get_rect()
         # задаём координаты игрока на экране
-        self.rect.center = (SCREEN_WIDTH / 2, SCREEN_HEIGTH / 2)
+        self.rect.center = (SCREEN_WIDTH / 2, SCREEN_HEIGHT - 30)
         self.speedx = 0
         self.speedy = 0
 
@@ -24,4 +24,8 @@ class Player(pygame.sprite.Sprite):
         if key_state[pygame.K_RIGHT]:
             self.speedx = 5
         self.rect.x = self.rect.x + self.speedx
-    
+        #проверка выхода за границы
+        if self.rect.left < 0:
+            self.rect.left = 0
+        if self.rect.right > SCREEN_WIDTH:
+            self.rect.right = SCREEN_WIDTH

@@ -1,7 +1,7 @@
 # ширина окна программы
 SCREEN_WIDTH = 400
 # высота окна программы
-SCREEN_HEIGTH = 600
+SCREEN_HEIGHT = 600
 # кадры в секунду
 FPS = 60
 
